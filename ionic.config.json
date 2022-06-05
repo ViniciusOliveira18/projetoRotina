@@ -1,0 +1,7 @@
+{
+  "name": "pDispositivos",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

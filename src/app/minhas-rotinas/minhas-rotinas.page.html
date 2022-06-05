@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button autoHide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Minhas Rotinas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let rotina of Rotinas" class="user-list">
+
+      <ion-item>
+        <ion-icon name="person-outline" item-start large></ion-icon>
+        <h5>{{rotina.nome}}</h5>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon name="mail-outline"></ion-icon>
+        <h5>{{rotina.email}}</h5>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon name="call-outline"></ion-icon>
+        <h5>{{rotina.telefone}}</h5>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon name="chatbox-outline"></ion-icon>
+        <h5>{{rotina.descricao}}</h5>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon name="calendar-outline"></ion-icon>
+        <h5>{{rotina.data}}</h5>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon name="alarm-outline"></ion-icon>
+        <h5>{{rotina.hora}}</h5>
+      </ion-item>
+
+      <ion-item>
+        <div class="item-note" item-end>
+          <button ion-button clear [routerLink]="['/edit-rotina/', rotina.$id]">
+            <ion-icon name="hammer-outline"></ion-icon>
+          </button>
+          <button ion-button clear (click)="deletaRotina(rotina.$id)">
+            <ion-icon name="trash-outline"></ion-icon>
+          </button>
+        </div>
+      </ion-item>
+    </ion-card>
+
+
+    <!-- <ion-button [routerLink]="['/minhas-rotina/', rotina.$id]" type="submit" color="primary" shape="full" expand="block">Cadastrar Rotina</ion-button> -->
+</ion-content>

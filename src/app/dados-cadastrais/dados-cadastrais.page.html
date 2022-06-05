@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Dados Cadastrais</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list lines="full">
+    <form [formGroup]="dadosForm" (ngSubmit)="formSubmit()">
+      <ion-item>
+        <ion-label position="floating">CPF</ion-label>
+        <ion-input formControlName="cpf" type="text" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating"></ion-label>
+        <ion-input formControlName="idade" type="date" required>
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Foto</ion-label>
+        <ion-input formControlName="foto" type="text" required>
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Nome</ion-label>
+        <ion-input formControlName="nome" type="text" required>
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Endereco</ion-label>
+        <ion-input formControlName="endereco" type="text" required>
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Email</ion-label>
+        <ion-input formControlName="email" type="email" #email required>
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Senha</ion-label>
+        <ion-input formControlName="senha" type="password" #senha required></ion-input>
+      </ion-item>
+      <ion-row>
+        <ion-col>
+          <ion-button type="submit" (click)="signUp(email, senha)" color="primary" shape="full" expand="block">Cadastrar</ion-button>
+        </ion-col>
+      </ion-row>
+    </form>
+  </ion-list>
+
+</ion-content>
